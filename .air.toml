@@ -1,0 +1,12 @@
+# .air.toml
+
+root = "."
+
+[build]
+  # El comando para compilar en Unix/Linux no necesita la extensión .exe
+  cmd = "go build -o ./tmp/main ./cmd/main/"
+  watch = ["web", "internal", "cmd"]
+
+[run]
+  # No necesitas especificar la extensión .exe para ejecutar en Unix/Linux
+  executable = "./tmp/main"
