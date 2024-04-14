@@ -10,4 +10,5 @@ type PageData struct {
 	ErrorMessage  string
 	HeadContent   template.HTML
 	NavbarContent template.HTML
+	FooterContent template.HTML
 }

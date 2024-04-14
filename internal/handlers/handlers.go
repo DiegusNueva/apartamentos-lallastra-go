@@ -60,6 +60,26 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 
 	data.HeadContent = template.HTML(headBuffer.String())
 
+	// Footer functions
+	footerContent, err := os.ReadFile("web/templates/footer.html")
+
+	if err != nil {
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+	}
+
+	footerTemplate, err := template.New("footer").Parse(string(footerContent))
+	if err != nil {
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+	}
+
+	var footerBuffer bytes.Buffer
+	err = footerTemplate.Execute(&footerBuffer, data)
+	if err != nil {
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+	}
+
+	data.FooterContent = template.HTML(footerBuffer.String())
+
 	// Navbar functions
 	navbarContent, err := os.ReadFile("web/templates/navbar.html")
 	if err != nil {
