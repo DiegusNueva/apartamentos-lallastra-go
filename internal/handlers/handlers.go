@@ -27,7 +27,7 @@ func renderTemplate(w http.ResponseWriter, tmplFile string, data interface{}) {
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	data := models.PageData{
-		Title:   "TuniverS",
+		Title:   "Apartamentos La Llastra de Garaña",
 		Author:  "Diego Alonso Molina",
 		Welcome: "Mid Full Stack Developer | React | MySQL | Go | HTML5 | CSS3 | JavaScript e Ingeniero Técnico en Topografía (Surveying Engineer)",
 	}
