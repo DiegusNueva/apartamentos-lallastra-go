@@ -29,7 +29,7 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	data := models.PageData{
 		Title:   "Apartamentos La Llastra de Garaña",
 		Author:  "Diego Alonso Molina",
-		Welcome: "Descubre la combinación perfecta de lujo y naturaleza: viviendas unifamiliares cerca del mar y la montaña. ¡Reserva ahora y haz realidad tus sueños!",
+		Welcome: "La combinación perfecta de lujo y naturaleza: viviendas unifamiliares cerca del mar y la montaña. ¡Reserva ahora y haz realidad tus sueños!",
 	}
 
 	page := r.URL.Path[1:]
